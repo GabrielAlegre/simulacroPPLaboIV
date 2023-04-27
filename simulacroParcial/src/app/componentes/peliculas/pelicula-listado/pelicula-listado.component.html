@@ -1,0 +1,7 @@
+<p>pelicula-listado works!</p>
+<li class="p-2 mb-2" *ngFor="let pelicula of listaRecibida">
+    ID: {{pelicula.id}} - Nombre: {{pelicula.nombre}} - Tipo: {{pelicula.tipo}} - Fecha de Estreno: {{pelicula.fechaEstreno}} 
+    - Cantidad De Publico: {{pelicula.cantidadDePublico}} - Foto De La Peli: <img src="{{pelicula.fotoDeLaPeli}} " alt="foto">
+    <button class="btn btn-primary" (click)="getDatosPelicula(pelicula)">Seleccionar pelicula</button>
+   </li>
+   

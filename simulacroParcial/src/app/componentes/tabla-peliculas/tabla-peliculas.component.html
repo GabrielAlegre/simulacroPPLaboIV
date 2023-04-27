@@ -1,0 +1,25 @@
+<p>tabla-peliculas works!</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Fecha de estreno</th>
+            <th>Cantidad de publico</th>
+            <th>Foto de la pelicula</th>
+            <th>Mostrar detalle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pelicula of listaRecibida">
+            <td>{{pelicula.id}}</td>
+            <td>{{pelicula.nombre}}</td>
+            <td>{{pelicula.tipo}}</td>
+            <td>{{pelicula.fechaEstreno}}</td>
+            <td>{{pelicula.cantidadDePublico}}</td>
+            <td><img [src]=pelicula.fotoDeLaPeli alt="foto"></td>
+            <td><button class="btn btn-primary" (click)="getDatosPelicula(pelicula)">Seleccionar pelicula</button></td>
+        </tr>
+    </tbody>
+</table>
