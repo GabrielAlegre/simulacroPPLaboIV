@@ -1,0 +1,10 @@
+<div *ngFor="let unPais of paisesObtenidosApi | slice:5:15">
+    <button class="btn btn-light" (click)="obtenerPaises(unPais.translations.spa.common)">
+      <h3 style="display: inline;">
+        {{unPais.translations.spa.common}}  
+      </h3>
+      <img [src]="unPais.flags.svg" alt="{{unPais.translations.spa.common}} flag" width="25">
+    </button>
+</div>
+
+<p>tabla-paises works!</p>

@@ -11,6 +11,12 @@ import { ActorListadoComponent } from './componentes/actor/actor-listado/actor-l
 import { PeliculaListadoComponent } from './componentes/peliculas/pelicula-listado/pelicula-listado.component';
 import { TablaPeliculasComponent } from './componentes/tabla-peliculas/tabla-peliculas.component';
 import { DetallePeliculaComponent } from './componentes/peliculas/detalle-pelicula/detalle-pelicula.component';
+import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -22,11 +28,16 @@ import { DetallePeliculaComponent } from './componentes/peliculas/detalle-pelicu
     ActorListadoComponent,
     PeliculaListadoComponent,
     TablaPeliculasComponent,
-    DetallePeliculaComponent
+    DetallePeliculaComponent,
+    TablaPaisesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
